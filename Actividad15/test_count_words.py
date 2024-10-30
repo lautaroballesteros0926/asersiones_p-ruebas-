@@ -33,3 +33,11 @@ def test_empty_string():
 def test_only_non_alpha():
     words = CountWords().count("!!!")
     assert words == 0
+
+def test_word_notfinishinrs():
+    words = CountWords().count("carrot,chicken")
+    assert words == 0
+
+def test_word_withdifferentwords():
+    words = CountWords().count("chicken, cats, rabbit ")
+    assert words == 1
